@@ -10,9 +10,9 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
-// Create a function, getRandomCard(), that always returns the number 5
+// Make this function return a random number between 1 and 13
 function getRandomCard() {
-  return 5;
+  return Math.floor( Math.random()*13 ) + 1
 }
 
 function startGame() {
@@ -37,7 +37,7 @@ function renderGame() {
   }
   messageEl.textContent = message;
 }
-// 3. Use the getRandomCard() to set the value of card
+
 function newCard() {
   let card = getRandomCard();
   sum += card;
@@ -45,3 +45,4 @@ function newCard() {
   console.log(cards);
   renderGame();
 }
+
