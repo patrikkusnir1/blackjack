@@ -1,4 +1,4 @@
-// 2. Use getRandomCard() to set the values of firstCard and secondCard
+
 let firstCard = getRandomCard();
 let secondCard = getRandomCard();
 let cards = [firstCard, secondCard];
@@ -10,9 +10,18 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
-// Make this function return a random number between 1 and 13
+
 function getRandomCard() {
-  return Math.floor( Math.random()*13 ) + 1
+  // if 1 -> return 11
+  // if 11 - 13 return 10
+  let randomNumber = Math.floor( Math.random()*13 ) + 1;
+  if (randomNumber > 10) {
+    return 10;
+  } else if (randomNumber === 1) {
+    return 11
+  } else {
+    return randomNumber;
+  }
 }
 
 function startGame() {
